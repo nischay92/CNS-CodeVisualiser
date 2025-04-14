@@ -1,0 +1,12 @@
+source("renv/activate.R")
+renv::load()
+sink("/Users/nischay92/Documents/CNS_SRES_1/backend/r_script_debug.txt")
+cat("📂 Working Directory:\n", getwd(), "\n\n")
+cat("📁 Files in current directory:\n", list.files(), "\n\n")
+cat("🔍 Session Info:\n")
+print(sessionInfo())
+sink()
+
+png("/Users/nischay92/Documents/CNS_SRES_1/backend/static/plots/3eb63ef7-3e1a-4507-8204-2c490dc9a0e4.png")
+fig <- plot_ly(z = ~volcano, type = 'surface')
+dev.off()

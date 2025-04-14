@@ -1,0 +1,3 @@
+png("/Users/nischay92/Documents/CNS_SRES_1/backend/static/plots/8978a96d-3765-455e-bff1-2f96efae30a2.png")
+fig <- plot_ly(x = c(1, 2, 3), y = c(10, 20, 30), type = 'scatter', mode = 'lines+markers')
+dev.off()
