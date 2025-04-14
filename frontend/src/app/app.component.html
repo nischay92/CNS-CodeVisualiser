@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Code Visualization Generator</h2>
+
+  <form (ngSubmit)="submitCode()" class="form">
+    <label for="language">Language</label>
+    <select [(ngModel)]="language" name="language" id="language" class="input">
+      <option value="r">R</option>
+      <option value="python">Python</option>
+    </select>
+
+    <label for="code">Code</label>
+    <textarea
+      [(ngModel)]="code"
+      name="code"
+      rows="10"
+      class="textarea"
+      placeholder="Enter your R or Python code here..."
+      required
+    ></textarea>
+
+    <button type="submit" class="btn">Generate</button>
+  </form>
+
+  <div *ngIf="loading" class="loader-container">
+    <div class="spinner"></div>
+  </div>
+
+  <div *ngIf="iframeUrl && !loading" class="output">
+    <h3>Output</h3>
+    <iframe [src]="iframeUrl" width="100%" height="600px" frameborder="0"></iframe>
+  </div>
+</div>
